@@ -91,7 +91,7 @@ def main():
     utils.make_sure_dir_exists(html_dir)
 
     if args.option == 'deps':
-        print 'libnss3-tools libgconf-2-4'
+        print('libnss3-tools libgconf-2-4')
         return
 
     if args.option == 'setup':

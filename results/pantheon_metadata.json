@@ -1,0 +1,17 @@
+{
+    "cc_schemes": [
+        "bbr",
+        "copa",
+        "cubic"
+    ],
+    "downlink_trace": "12mbps_ack.trace",
+    "flows": 1,
+    "git_summary": "branch: master @ 23e738ce5acae1d36e321886cd613b0b9401ac11\n",
+    "interval": 0,
+    "mode": "local",
+    "random_order": false,
+    "run_times": 1,
+    "runtime": 60,
+    "start_run_id": 1,
+    "uplink_trace": "12mbps_data.trace"
+}

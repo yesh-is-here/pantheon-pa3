@@ -15,7 +15,7 @@ def main():
     send_src = path.join(cc_repo, 'sender')
 
     if args.option == 'deps':
-        print ('makepp libboost-dev libprotobuf-dev protobuf-c-compiler '
+        print(('makepp libboost-dev libprotobuf-dev protobuf-c-compiler ')
                'protobuf-compiler libjemalloc-dev libboost-python-dev')
         return
 

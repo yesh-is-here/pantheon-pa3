@@ -1,0 +1,4 @@
+Scheme,Uplink Throughput (Mbps),Avg RTT (ms),Loss Rate (%)
+CUBIC,0.0006,1.0,0.0
+BBR,0.0006,1.0,0.0
+COPA,,,

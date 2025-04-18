@@ -17,7 +17,7 @@ def main():
     src = path.join(cc_repo, 'src', 'examples', 'sproutbt2')
 
     if args.option == 'deps':
-        print ('libboost-math-dev libssl-dev libprotobuf-dev '
+        print(('libboost-math-dev libssl-dev libprotobuf-dev ')
                'protobuf-compiler libncurses5-dev')
         return
 

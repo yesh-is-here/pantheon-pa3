@@ -41,7 +41,7 @@ def main():
     video = path.join(cc_repo, 'video.y4m')
 
     if args.option == 'deps':
-        print ('chromium-browser xvfb xfonts-100dpi xfonts-75dpi '
+        print(('chromium-browser xvfb xfonts-100dpi xfonts-75dpi ')
                'xfonts-cyrillic xorg dbus-x11 npm nodejs')
         return
 

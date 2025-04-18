@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 
 import os
 from os import path
@@ -16,8 +16,8 @@ def main(delta_conf):
     send_src = path.join(cc_repo, 'sender')
 
     if args.option == 'deps':
-        print ('makepp libboost-dev libprotobuf-dev protobuf-c-compiler '
-               'protobuf-compiler libjemalloc-dev libboost-python-dev')
+        print('makepp libboost-dev libprotobuf-dev protobuf-c-compiler '
+              'protobuf-compiler libjemalloc-dev libboost-python-dev')
         return
 
     if args.option == 'setup':
@@ -44,3 +44,4 @@ def main(delta_conf):
 
 if __name__ == '__main__':
     main('do_ss:auto:0.1')
+

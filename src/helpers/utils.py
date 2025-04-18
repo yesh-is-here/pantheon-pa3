@@ -37,7 +37,8 @@ make_sure_dir_exists(tmp_dir)
 
 def parse_config():
     with open(path.join(context.src_dir, 'config.yml')) as config:
-        return yaml.load(config)
+        return yaml.load(config, Loader=yaml.FullLoader)
+
 
 
 def update_submodules():
@@ -105,16 +106,18 @@ def who_runs_first(cc):
     cc_src = path.join(context.src_dir, 'wrappers', cc + '.py')
 
     cmd = [cc_src, 'run_first']
-    run_first = check_output(cmd).strip()
+    run_first = check_output(cmd).decode().strip()  # 🔧 decode added
 
     if run_first == 'receiver':
         run_second = 'sender'
     elif run_first == 'sender':
         run_second = 'receiver'
     else:
+        print("ERROR: run_first output =", run_first)  # Debug info
         sys.exit('Must specify "receiver" or "sender" runs first')
 
     return run_first, run_second
+
 
 
 def parse_remote_path(remote_path, cc=None):
@@ -215,9 +218,15 @@ def save_test_metadata(meta, metadata_path):
     if 'downlink_trace' in meta:
         meta['downlink_trace'] = path.basename(meta['downlink_trace'])
 
+    # 🔥 PATCH: Convert any bytes to str before dumping to JSON
+    for k, v in meta.items():
+        if isinstance(v, bytes):
+            meta[k] = v.decode('utf-8')
+
     with open(metadata_path, 'w') as metadata_fh:
         json.dump(meta, metadata_fh, sort_keys=True, indent=4,
                   separators=(',', ': '))
+
 
 
 def get_sys_info():
